@@ -17,9 +17,6 @@ def get_ip():
         s.close()
     return IP
 
-
-
-
 host_name = socket.gethostname()   
 host_ip= get_ip()
 
@@ -44,7 +41,9 @@ if __name__ == '__main__':
                                           'POST',
                                           json.dumps(data),
                                           headers=headers)
+        print(response)
+        if(response["status"] == "200"):
+            break
         
-        time.sleep(6)
-
+        
 
