@@ -3,8 +3,11 @@ import json
 import time
 import datetime
 import socket
-import subprocess
+from subprocess import call
 
+def dump_to_json(val):
+    with open('recepient/donors.json','w') as outfile:
+        json.dump(val,outfile)
 
 def get_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -43,13 +46,19 @@ if __name__ == '__main__':
                                           'POST',
                                           json.dumps(data),
                                           headers=headers)
-        print(response)
         if(response["status"] == "200"):
             response, content = http.request( url_getClients,
                                           'POST',
                                           json.dumps(data),
                                           headers=headers)
             
+            dump_to_json(json.loads(content.decode("utf-8")))
+            break
+                        
+
+    call(["python","recepient/app.py"])
+            
+
             
         
         
