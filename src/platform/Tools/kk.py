@@ -1,4 +1,6 @@
 import rpyc
+import random
+
 
 class MyService(rpyc.Service):
     def on_connect(self, conn):
@@ -6,14 +8,15 @@ class MyService(rpyc.Service):
         pass
 
     def on_disconnect(self, conn):
-      
+        
         pass
 
-    def exposed_get_answer(self): 
-        return "hello gatar"
-        
-
-    exposed_the_real_answer_though = 43    
+    def exposed_get_answer(self,num): 
+        rand_sum = 0
+        for _ in range(0,num):
+            rand_sum+=random.randint(0,100000)
+        return rand_sum/num
+          
 
     def get_question(self):  
         return "what is the airspeed velocity of an unladen swallow?"

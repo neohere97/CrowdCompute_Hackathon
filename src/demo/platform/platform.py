@@ -33,7 +33,7 @@ def recepientAttach():
 
 @app.route('/getClients',methods=['POST'])
 def ret():
-    with open("src/demo/platform/active_hosts.json") as f:
+    with open("D:\Code\HackTest\CrowdCompute_Hackathon\src\demo\platform\\active_hosts.json") as f:
         active_hosts = json.load(f)
     
     return json.dumps(active_hosts)
@@ -42,11 +42,11 @@ def ret():
 
 def dump_to_json(val):
     if(val == "donor"):
-        with open('src/demo/platform/active_hosts.json','w') as outfile:
+        with open('D:\Code\HackTest\CrowdCompute_Hackathon\src\demo\platform\\active_hosts.json','w') as outfile:
             json.dump(donors,outfile)
     else:
-        with open('src/demo/platform/active_recp.json','w') as oufile:
+        with open('D:\Code\HackTest\CrowdCompute_Hackathon\src\demo\platform\\active_recp.json','w') as oufile:
             json.dump(recepient,oufile)
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')

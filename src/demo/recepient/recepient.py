@@ -6,7 +6,7 @@ import socket
 from subprocess import call
 
 def dump_to_json(val):
-    with open('recepient/donors.json','w') as outfile:
+    with open('D:\Code\HackTest\CrowdCompute_Hackathon\src\demo\\recepient\\donors.json','w') as outfile:
         json.dump(val,outfile)
 
 def get_ip():
@@ -56,7 +56,7 @@ if __name__ == '__main__':
             break
                         
 
-    call(["python","recepient/app.py"])
+    call(["python","D:\Code\HackTest\CrowdCompute_Hackathon\src\demo\\recepient\\app.py"])
             
 
             
