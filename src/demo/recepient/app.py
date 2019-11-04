@@ -20,18 +20,17 @@ for i in active_donors:
 for i in connObjectList:
     results.append(rpyc.async_(i.root.get_answer))
 
-k1 = results[0](8222823)
-k2 = results[1](10423884)
-k3 = results[2](115231122)
-k4 = results[3](225231122)
+k1 = results[0](82228)
+k2 = results[1](10423)
 
 
 
-while(k1.ready == False and k2.ready == False and k3.ready and k4.ready == False):
+
+while(k1.ready == False and k2.ready == False):
     pass
 
 
-print(f" \n \n  {k1.value}, {k2.value}, {k3.value},{k4.value} \n \n ")
+print(f" \n \n  {k1.value}, {k2.value}\n \n ")
 
     
 

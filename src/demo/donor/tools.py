@@ -10,7 +10,7 @@ class MyService(rpyc.Service):
         pass
 
     def exposed_get_answer(self): 
-        return "hello gatar"
+        return "hello ksuhaal"
         
 
     exposed_the_real_answer_though = 43    
